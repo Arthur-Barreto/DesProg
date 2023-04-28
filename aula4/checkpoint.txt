@@ -1,0 +1,60 @@
+a = a + b; // duas intruções
+b = a - b; // duas intruções
+a = a - b; // duas intruções
+
+i = 0;
+while (i < 10) {
+    i++;
+}
+
+atribuição 1
+comparação 1 + 10
+incremento 10
+
+int soma(int v[], int n) {
+    int s = 0;
+    for (int i = 0; i < n; i++) {
+        s += v[i];
+    }
+    return s;
+}
+
+atribuição 1 + 1
+comparação n + 1 
+incremento n + n
+total 3n + 3
+
+int busca_simples(int v[], int n, int q) {
+    for (int i = 0; i < n; i++) {
+        if (v[i] == q) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+=   1
+<   n + 1
+++  n
+==  n
+max = 3n + 2
+
+int busca_simples(int v[], int n, int q) {
+    for (int i = 0; i < n; i++) {
+        if (v[i] == q) {
+            return i;
+        }
+        if (v[i] > q){
+            break;
+        }
+    }
+    return -1;
+}
+
+=   1
+<   n + 1
+++  n
+==  n
+>   n
+max = 4n+2
+

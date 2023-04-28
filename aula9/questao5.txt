@@ -1,0 +1,51 @@
+Quantidade de iterações do loop externo (x):
+-------------------------------------------
+Contador começa de 3 e multiplica por 2 enquanto for menor que n.
+
+Depois de x-1 iterações, a condição ainda vale.
+3 * 2^(x-1) < n
+2^(x-1) < n / 3
+x - 1 < log2(n / 3)
+x < log2(n/3)+1
+
+x = O(log n), ou seja, x <= c_x log n
+
+Quantidade de iterações do loop interno (y):
+-------------------------------------------
+Contador começa de 4 e multiplica por 5 enquanto for menor que i.
+
+Depois de y-1 iterações, a condição ainda vale.
+4 * 5^(y-1) < i
+5^(y-1) < i / 4
+y - 1 < log5(i / 4)
+y < log5(i/4)+1
+
+y = O(log i), ou seja, y <= c_y log i
+
+Valor de i ao longo do loop externo:
+-----------------------------------
+i = 3, 6, 12, ..., 3 * 2^(x-1)
+
+Limitante para as iterações de todas as execuções do loop interno:
+-----------------------------------------------------------------
+  c_y (log 3 + log 6 + log 12 + ... + log (3*2^(x-1)))
+= c_y (log (3*2^0) + log (3*2^1) + log (3*2^4) + ... + log (3*2^(x-1)))
+= c_y ((log 3 + log 2^0) + (log 3 + log 2^1) + (log 3 + log 2^2) + ... + (log 3 + log 2^(x-1)))
+= c_y ((log 3 + log 3 + log 3 + ... + log 3) + (log 2^0 + log 2^1 + log 2^2 + ... + log 2^(x-1)))
+= c_y (x log 3 + (log 2^0 + log 2^1 + log 2^2 + ... + log 2^(x-1)))
+
+Mudar de base equivale a multiplicar por uma constante
+
+= c_y (x log 3 + c (log2 2^0 + log2 2^1 + log2 2^2 + ... + log2 2^(x-1)))
+= c_y (x log 3 + c (0 + 1 + 2 + ... + (x-1)))
+
+Soma de PA
+- primeiro elemento 0
+- último elemento x-1
+- número de elementos x
+
+= c_y (x log 3 + c (0 + x - 1) (x / 2))
+= c_y (x log 3 + c (x - 1) (x / 2))
+
+Como x <= c_x log n, pelas regras de simplificação
+podemos concluir que a complexidade é O((log n)^2).

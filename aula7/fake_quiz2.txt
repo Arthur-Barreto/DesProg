@@ -1,0 +1,29 @@
+int v[] = {2, 6, 4, 5, 3};
+n = 5
+
+para bubble_sort
+    i = 4
+    j = [0,3]
+        {2,4,5,3,6}
+    i = 3
+    j = [0,2]
+        {2,4,3,5,6}
+    i = 2
+    j = [0,1]
+        {2,3,4,5,6}
+    i = 1
+    j = 0
+        {2,3,4,5,6} nao muda, confirma aqui
+
+para selection_sort
+    i = 0
+    m = i = 0
+    j = 1
+    nao muda
+    i = 1
+    m = 1
+    j = 2
+    v[1] > v[2] sim
+        m = 2
+        
+    

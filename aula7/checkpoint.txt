@@ -1,0 +1,87 @@
+repita indefinidamente
+    trocou = não
+
+    para cada i em (0, 1, 2, ..., n-2)
+        se v[i] > v[i+1]
+            troca v[i] e v[i+1]
+            trocou = sim
+
+    se não trocou
+        interrompe o loop
+
+
+entrada: {4,5,2,3,1}
+
+1 iteração
+    trocou = nao
+
+    para cada i em (0,1,2,3):
+        se v[0] > v[1]:
+            4 > 5 nao
+        se v[1] > v[2]:
+            5 > 2 sim
+            trocou = sim
+            {4,2,5,3,1}
+        se v[2] > v[3]:
+            2 > 3 nao
+        se v[3] > v[4]:
+            3 > 1 sim
+            trocou = sim
+            {4,2,5,1,3}
+
+2 iteração
+    trocou = nao
+    para cada i em (0,1,2,3):
+        se v[0] > v[1]:
+            4 > 2 sim
+            trocou sim
+            {2,4,5,1,3}
+        se v[1] > v[2]:
+            4 > 5 nao
+        se v[2] > v[3]:
+            5 > 1 sim
+            trocou = sim
+            {2,4,1,5,3}
+        se v[3] > v[4]:
+            5 > 3 sim
+            trocou = sim
+            {2,4,1,3,5}
+
+3 iteração
+    trocou = nao
+    para cada i em (0,1,2,3):
+        se v[0] > v[1]:
+            2 > 4 nao
+        se v[1] > v[2]
+            4 > 1 sim
+            trocou = sim
+            {2,1,4,3,5}
+        se v[2] > v[3]
+            4 > 3 sim
+            {2,1,3,4,5}
+            trocou = sim
+        se v[3] > v[4]
+            4 > 5 nao
+
+4 iteração
+    trocou = nao
+    para cada i em (0,1,2,3):
+        se v[0] > v[1]:
+            2 > 1 sim
+            trocou = sim
+            {1,2,3,4,5}
+            ...
+
+5 iteração
+    retorna a lista
+
+para cada i em (n-1, n-2, n-3, ..., 1)
+    trocou = não
+
+    para cada j em (0, 1, 2, ..., i-1)
+        se v[j] > v[j+1]
+            troca v[j] e v[j+1]
+            trocou = sim
+
+    se não trocou
+        interrompe o loop

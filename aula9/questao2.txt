@@ -1,0 +1,37 @@
+Quantidade de iterações do loop externo (x):
+-------------------------------------------
+Contador começa de 3 e aumenta em 4 enquanto for menor que n.
+
+Depois de x-1 iterações, a condição ainda vale.
+3 + 4(x-1) < n
+3 + 4x - 4 < n
+4x - 1 < n
+x < (n-1)/4
+
+x = O(n), ou seja, x <= c_x n
+
+Quantidade de iterações do loop interno (y):
+-------------------------------------------
+Contador começa de 2 e multiplica por 5 enquanto for menor que i.
+
+Depois de y-1 iterações, a condição ainda vale.
+2*5^(y-1) < i
+5^(y-1) < i / 2
+y-1 < log5(i/2)
+y < 1 + log5(i/2)
+
+y = O(log i), ou seja, y <= c_y log i
+
+Valor de i ao longo do loop externo:
+-----------------------------------
+i = 3, 7, 11, ..., 3 + 4(x-1)
+
+Limitante para as iterações de todas as execuções do loop interno:
+-----------------------------------------------------------------
+  c_y (log3 + log7 + log11 + log(3+4(x-1)))
+
+Soma de logaritmos de PA
+<= c_y x log x
+
+Como x <= c_x n, pelas regras de simplificação
+podemos concluir que a complexidade é O(n log n).

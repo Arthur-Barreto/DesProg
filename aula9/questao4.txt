@@ -1,0 +1,44 @@
+Quantidade de iterações do loop externo (x):
+-------------------------------------------
+Contador começa de 5 e multiplica por 2 enquanto for menor que n.
+
+Depois de x-1 iterações, a condição ainda vale.
+5 * 2^(x-1) < n
+2^(x-1) < n / 5
+2^x / 2^1 < n / 5
+2^x / 2 < n / 5
+2^x < 2n/5
+
+2^x = O(n), ou seja, 2^x <= c_x n
+
+Quantidade de iterações do loop interno (y):
+-------------------------------------------
+Contador começa de 4 e aumenta em 3 enquanto for menor que i.
+
+Depois de y-1 iterações, a condição ainda vale.
+4 + 3(y-1) < i
+4 + 3y - 3 < i
+3y + 1 < i
+3y < i - 1
+y < (i-1)/3
+
+y = O(i), ou seja, y <= c_y i
+
+Valor de i ao longo do loop externo:
+-----------------------------------
+i = 5, 10, 20, ..., 5 * 2^(x-1)
+
+Limitante para as iterações de todas as execuções do loop interno:
+-----------------------------------------------------------------
+  c_y (5 + 10 + 20 + ... + (5*2^(x-1)))
+
+  Soma de PG
+- primeiro elemento 5
+- razão 2
+- número de elementos x
+
+= c_y 5 (2^x - 1) / (2 - 1)
+= c_y 5 (2^x - 1)
+
+Como 2^x <= c_x n, pelas regras de simplificação
+podemos concluir que a complexidade é O(n).
